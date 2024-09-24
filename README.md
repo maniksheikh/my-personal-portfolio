@@ -1,8 +1,8 @@
-# Nuxt 3 Cartrader Car Project
+# Nuxt 3 Api Product Project
 
-### Create a stunning car dealership website using Nuxt 3 and Tailwind CSS for a seamless user experience and a visually appealing design. This project will leverage the power of Nuxt 3, the latest version of the popular Vue.js framework, to build a fast, dynamic, and SEO-friendly website for a car dealership. Tailwind CSS will be used for efficient and responsive styling, making it easier to create a beautiful and user-friendly interface.
+### Create a stunning car dealership website using Nuxt 3 and Tailwind CSS for a seamless user experience and a visually appealing design. This project will leverage the power of Nuxt 3, the latest version of the popular Vue.js framework, to build a fast, dynamic, and SEO-friendly website for a car dealership.The project fetches dynamic product data from a Fake API, enabling smooth integration of API-driven content. Tailwind CSS will be used for efficient and responsive styling, making it easier to create a beautiful and user-friendly interface.
 
-## Setup
+## https://api-product-project.netlify.app
 
 
 

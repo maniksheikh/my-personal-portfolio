@@ -1,0 +1,51 @@
+[
+  {
+    "id": "vocals",
+    "title": "Vocalo.ai",
+    "description": "Gamify language learning with immersive AI conversations, personalised curriculum, and real-time comprehensive feedback.",
+    "tags": ["LLM", "OpenAI", "TTS", "STT"],
+    "colorClass": "vocals",
+    "link": "https://vocalo.ai/"
+  },
+  {
+    "id": "sketch",
+    "title": "SketchToImage",
+    "description": "Turn simple sketches into stunning, photorealistic artwork using AI diffusion models.",
+    "tags": ["Stable Diffusion", "ControlNet", "Image To Video"],
+    "colorClass": "sketch",
+    "link": "https://sketchtoimage.com/"
+  },
+  {
+    "id": "luna",
+    "title": "HeyLuna.ai",
+    "description": "Experience natural conversations with an expressive 3D AI assistant that sees, hears, and understands.",
+    "tags": ["LLM", "RAG", "Vector DB", "Chatbot"],
+    "colorClass": "luna",
+    "link": "https://heyluna.ai/"
+  },
+  {
+    "id": "photo",
+    "title": "PhotoFoxAI",
+    "description": "Generate professional-quality product photography and content without traditional photography equipment.",
+    "tags": ["Flux", "Diffusion", "Image To Image"],
+    "colorClass": "photo",
+    "link": "https://photofox.ai/"
+  },
+  {
+    "id": "story",
+    "title": "AiStoryGen",
+    "description": "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
+    "tags": ["LLM", "Diffusion", "Synthetix"],
+    "colorClass": "story",
+    "link": "https://aistorygen.org/"
+  },
+  {
+    "id": "word",
+    "title": "Wordrocket.ai",
+    "description": "Create professional content across text, image, video, and audio with one powerful AI platform.",
+    "tags": ["LLM", "OpenAI", "Claude", "Content Engine"],
+    "colorClass": "word",
+    "link": "https://wordrocket.ai/"
+  }
+]
+  

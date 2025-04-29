@@ -1,11 +1,20 @@
 <template>
-    <div>
-       <CarHero></CarHero>
+    <div class="main-container">
+       <h1>Hello Manik</h1>
     </div>
 </template>
 
-<script setup>
-   useHead({
-    title: 'Cartrader'
-   })
-</script>
+<style lang="scss">
+   .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+
+    h1 {
+      font-size: 66px;
+      color: #333;
+    }
+   }
+</style>

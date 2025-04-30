@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Languages",
+    "icon": "🎨",
+    "items": [
+      {
+        "name": "HTML"
+      },
+      {
+        "name": "CSS"
+      },
+      {
+        "name": "SASS"
+      },
+      {
+        "name": "Tailwind CSS"
+      },
+      {
+        "name": "JavaScript"
+      }
+    ]
+  },
+  {
+    "title": "Technologies",
+    "icon": "🧠",
+    "items": [
+      {
+        "name": "Vue.js"
+      },
+      {
+        "name": "Nuxt.js"
+      },
+      {
+        "name": "Vuetify"
+      },
+      {
+        "name": "Node.js"
+      },
+      {
+        "name": "Firebase"
+      }
+    ]
+  },
+  {
+    "title": "Tools & Categories",
+    "icon": "🛠️",
+    "items": [
+      {
+        "name": "Git"
+      },
+      {
+        "name": "GitHub"
+      },
+      {
+        "name": "Terminal"
+      },
+      {
+        "name": "Figma"
+      },
+      {
+        "name": "VS Code"
+      }
+    ]
+  }
+]

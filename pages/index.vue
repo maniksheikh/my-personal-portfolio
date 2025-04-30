@@ -56,13 +56,8 @@
     <div class="projects-container">
       <h1>Projects</h1>
       <div class="grid">
-        <div 
-          class="card" 
-          v-for="project in projects" 
-          :key="project.id" 
-          :class="project.colorClass"
-          @click="handleProjectClick(project)"
-        >
+        <div class="card" v-for="project in projects" :key="project.id" :class="project.colorClass"
+          @click="handleProjectClick(project)">
           <div class="title-svg">
             <h2>{{ project.title }}
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
@@ -76,24 +71,70 @@
           </div>
           <p>{{ project.description }}</p>
           <div class="tags">
-            <span 
-              v-for="tag in project.tags" 
-              :key="tag" 
-              class="tag"
-              @click="handleTagClick(project)"
-            >{{ tag }}</span>
+            <span v-for="tag in project.tags" :key="tag" class="tag" @click="handleTagClick(project)">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Achivement section -->
+    <section class="achievements">
+      <h2 class="title">Achievements</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon clock">
+            <Clock />
+          </div>
+          <div class="value">2+</div>
+          <div class="label">Years Active</div>
+        </div>
+        <div class="card">
+          <div class="icon box">
+            <Box />
+          </div>
+          <div class="value">3+</div>
+          <div class="label">Products Launched</div>
+        </div>
+        <div class="card">
+          <div class="icon users">
+            <Users />
+          </div>
+          <div class="value">10k+</div>
+          <div class="label">Worldwide Users</div>
+        </div>
+        <div class="card">
+          <div class="icon star">
+            <Star />
+          </div>
+          <div class="value">3.2+</div>
+          <div class="label">Average Rating</div>
+        </div>
+      </div>
+    </section>
+    <!-- Tech Stack -->
+    <div class="tech-stack-container">
+      <h2>Skills & Technologies</h2>
+      <div class="tech-stacks">
+        <div class="stacks" v-for="(stack, index) in stacks" :key="index">
+          <h3>
+            <span class="stack-icon">{{ stack.icon }}</span>
+            <span class="stack-title">{{ stack.title }}</span>
+          </h3>
+          <div class="items-grid">
+            <div v-for="item in stack.items" :key="item.name" class="tech-item">
+              {{ item.name }}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-
   </div>
 </template>
 
 <script setup>
-import { Brain, Rocket, Target } from "lucide-vue-next";
+import { Brain, Rocket, Target, Clock, Box, Users, Star } from "lucide-vue-next";
 import projects from "../data/projects.json";
+import stacks from "../data/techData.json";
 
 const handleProjectClick = (project) => {
   if (project.link) {
@@ -208,15 +249,20 @@ useHead({
 
       .box-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 2rem;
+        padding: 0 2rem;
 
         .box-1,
         .box-2,
         .box-3 {
+          width: 100%;
+          min-height: 250px;
+          display: flex;
+          flex-direction: column;
           text-align: center;
           align-items: center;
-          justify-items: center;
+          justify-content: center;
           background: rgba(255, 255, 255, 0.05);
           border-radius: 10px;
           padding: 2rem;
@@ -330,7 +376,7 @@ useHead({
   .projects-container {
     margin-top: 8rem;
     padding: 2rem 0;
-    min-height: 80vh;
+    min-height: 60vh;
 
     h1 {
       text-align: center;
@@ -354,7 +400,7 @@ useHead({
       transition: all 0.3s ease-in-out;
       border: 1px solid transparent;
       position: relative;
-      overflow: hidden; 
+      overflow: hidden;
       cursor: pointer;
 
       &::before {
@@ -364,12 +410,10 @@ useHead({
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
-        );
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
         transition: left 1s ease-in-out;
       }
 
@@ -402,13 +446,13 @@ useHead({
           width: 100%;
           gap: 0.5rem;
 
-            svg {
-              width: 1.3rem;
-              height: 1.3rem;
-              stroke: currentColor;
-              opacity: 0.7;
-              cursor: pointer;
-            }
+          svg {
+            width: 1.3rem;
+            height: 1.3rem;
+            stroke: currentColor;
+            opacity: 0.7;
+            cursor: pointer;
+          }
         }
       }
 
@@ -439,7 +483,7 @@ useHead({
             border-color: rgba(255, 255, 255, 0.3);
             box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            
+
             &::before {
               content: '';
               position: absolute;
@@ -447,12 +491,10 @@ useHead({
               left: -100%;
               width: 100%;
               height: 100%;
-              background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.1),
-                transparent
-              );
+              background: linear-gradient(90deg,
+                  transparent,
+                  rgba(255, 255, 255, 0.1),
+                  transparent);
               animation: shine 1s ease-in-out;
             }
           }
@@ -485,6 +527,266 @@ useHead({
     }
   }
 
+  .achievements {
+    margin-top: 4rem;
+    height: 60vh;
+
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgb(75, 71, 71);
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        &:nth-child(1) {
+          border: 2px solid rgba(228, 80, 183, 0.3);
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            border-color: rgba(228, 80, 183, 0.8);
+            box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
+          }
+        }
+
+        &:nth-child(2) {
+          border: 2px solid rgba(58, 62, 255, 0.3);
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            border-color: rgba(58, 62, 255, 0.8);
+            box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
+          }
+        }
+
+        &:nth-child(3) {
+          border: 2px solid rgba(0, 255, 136, 0.3);
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            border-color: rgba(0, 255, 136, 0.8);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
+          }
+        }
+
+        &:nth-child(4) {
+          border: 2px solid rgba(255, 215, 0, 0.3);
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+          }
+        }
+
+        .icon {
+          width: 44px;
+          height: 44px;
+          margin: 0 auto 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s ease;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.clock {
+            color: #FF6B6B; // Warm red
+          }
+
+          &.box {
+            color: #4ECDC4; // Turquoise
+          }
+
+          &.users {
+            color: #45B7D1;
+          }
+
+          &.star {
+            color: #FFD93D; // Bright yellow
+          }
+        }
+
+        .value {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          background: linear-gradient(90deg, #00cfff, #3a3eff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .label {
+          font-size: 1rem;
+          color: #807878;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // Move these variables to the top of your style section, outside of .main-container
+  $primary-color: #3a3eff;
+  $secondary-color: #e450b7;
+  $accent-color: #00ff88;
+  $text-primary: rgb(75, 71, 71);
+  $text-secondary: #807878;
+  $card-bg: rgba(255, 255, 255, 0.05);
+  $border-color: rgba(255, 255, 255, 0.1);
+  $transition: all 0.3s ease-in-out;
+
+  .tech-stack-container {
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    font-family: Inter, "Segoe UI", sans-serif;
+
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: $text-primary;
+      margin-bottom: 3rem;
+
+      &:hover {
+        background: linear-gradient(90deg, #00cfff, #3a3eff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .tech-stacks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+      }
+
+      .stacks {
+        background: rgb(10, 25, 47);
+        border-radius: 1rem;
+        padding: 2rem;
+        border: 1px solid $border-color;
+        transition: $transition;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          color: $primary-color;
+          text-align: center;
+
+          .stack-title {
+            font-size: 1.5rem;
+            color: rgb(204, 214, 246);
+            margin-bottom: 1.5rem;
+            margin-left: 1rem;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg, rgb(100, 255, 218), rgb(204, 214, 246)) text;
+          }
+
+        }
+
+        .items-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .tech-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.8rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgb(204, 214, 246);
+            transition: $transition;
+            cursor: pointer;
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.12);
+              color: white;
+              transform: translateY(-2px);
+            }
+          }
+        }
+
+        &:nth-child(1) {
+          border-color: rgba($primary-color, 0.3);
+
+          &:hover {
+            border-color: rgba($primary-color, 0.8);
+          }
+        }
+
+        &:nth-child(2) {
+          border-color: rgba($secondary-color, 0.3);
+
+          &:hover {
+            border-color: rgba($secondary-color, 0.8);
+          }
+        }
+
+        &:nth-child(3) {
+          border-color: rgba($accent-color, 0.3);
+
+          &:hover {
+            border-color: rgba($accent-color, 0.8);
+          }
+        }
+      }
+    }
+  }
 
 
 }
@@ -545,6 +847,7 @@ useHead({
     transform: translateY(8px);
   }
 }
+
 @keyframes shine {
   to {
     left: 100%;

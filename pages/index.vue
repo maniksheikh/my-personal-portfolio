@@ -6,8 +6,9 @@
       </div>
       <div class="hero-content">
         <h1 class="hero-title">
-          <span>Building Tomorrow's</span><br />
-          <span class="gradient-text">AI Solutions</span>
+          <span>Manik Sheikh</span><br />
+          <span>Frontend Developer</span>
+          <span class="gradient-text">Currently Work @CONNEKT STUDIO</span>
         </h1>
         <p class="hero-description">
           "Hi, I'm Manik Sheikh — a self-taught Frontend Developer with 2 years
@@ -119,6 +120,7 @@
             <span class="stack-icon">{{ stack.icon }}</span>
             <span class="stack-title">{{ stack.title }}</span>
           </h3>
+          <hr>
           <div class="items-grid">
             <div v-for="item in stack.items" :key="item.name" class="tech-item">
               {{ item.name }}
@@ -214,17 +216,13 @@ useHead({
         color: rgb(75, 71, 71);
 
         .gradient-text {
-          font-size: 5rem;
-          font-weight: 800;
+          font-size: 1.5rem;
+          font-weight: 600;
           background: linear-gradient(90deg, #00cfff, #3a3eff);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           transition: all 0.3s ease-in-out;
           display: inline-block;
-
-          &:hover {
-            transform: scale(1.02);
-          }
         }
       }
 
@@ -529,7 +527,7 @@ useHead({
 
   .achievements {
     margin-top: 4rem;
-    height: 60vh;
+    height: 50vh;
 
     .title {
       text-align: center;
@@ -674,7 +672,6 @@ useHead({
 
   .tech-stack-container {
     padding: 4rem 2rem;
-    margin-top: 4rem;
     font-family: Inter, "Segoe UI", sans-serif;
 
     h2 {
@@ -683,12 +680,6 @@ useHead({
       font-weight: 700;
       color: $text-primary;
       margin-bottom: 3rem;
-
-      &:hover {
-        background: linear-gradient(90deg, #00cfff, #3a3eff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
     }
 
     .tech-stacks {
@@ -721,7 +712,7 @@ useHead({
         h3 {
           font-size: 1.5rem;
           font-weight: 600;
-          margin-bottom: 1.5rem;
+
           color: $primary-color;
           text-align: center;
 
@@ -742,6 +733,7 @@ useHead({
           display: flex;
           flex-direction: column;
           gap: 1rem;
+          margin-top: 1.5rem;
 
           .tech-item {
             background: rgba(255, 255, 255, 0.08);

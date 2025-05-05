@@ -111,7 +111,7 @@
         </div>
       </div>
     </section>
-    <!-- Tech Stack -->
+    <!-- Tech Stack Skills -->
     <div class="tech-stack-container">
       <h2>Skills & Technologies</h2>
       <div class="tech-stacks">
@@ -129,14 +129,38 @@
         </div>
       </div>
     </div>
+    <!-- Footer section  -->
+    <div class="footer-section">
+      <h2 class="contact-heading">Get in Touch</h2>
+      <div class="contact-icons">
+        <a href="mailto:example@email.com" class="contact-item">
+          <Mail /> <span>Email</span>
+        </a>
+        <a href="https://x.com/dev_man50733" target="_blank" class="contact-item">
+          <Twitter /> <span>Twitter</span>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-manik-sheikh-6ab92433b/" target="_blank" class="contact-item">
+          <Linkedin /> <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/maniksheikh" target="_blank" class="contact-item">
+          <Github /> <span>GitHub</span>
+        </a>
+      </div>
+      <hr>
+      <p class="copyright">
+        &copy; {{ currentYear }} Manik Sheikh. All rights reserved.
+      </p>
+    </div>
 
   </div>
 </template>
 
 <script setup>
-import { Brain, Rocket, Target, Clock, Box, Users, Star } from "lucide-vue-next";
+import { Brain, Rocket, Target, Clock, Box, Users, Star, Mail,  Twitter, Linkedin, Github  } from "lucide-vue-next";
 import projects from "../data/projects.json";
 import stacks from "../data/techData.json";
+
+const currentYear = new Date().getFullYear();
 
 const handleProjectClick = (project) => {
   if (project.link) {
@@ -187,6 +211,7 @@ useHead({
       flex-shrink: 0;
       animation: border-glow 3s infinite;
       transition: transform 0.3s ease-in-out;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.05);
@@ -660,7 +685,6 @@ useHead({
     }
   }
 
-  // Move these variables to the top of your style section, outside of .main-container
   $primary-color: #3a3eff;
   $secondary-color: #e450b7;
   $accent-color: #00ff88;
@@ -779,6 +803,86 @@ useHead({
       }
     }
   }
+
+  .footer-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      color: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .contact-heading {
+      font-size: 3rem;
+      font-weight: 800;
+      color: linear-gradient(to right, #ffffff, #b5ffd9, #ffdbdb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      position: relative;
+      z-index: 1;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: #807878;
+        background: transparent;
+        transition: all 0.4s ease;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        span {
+          font-size: 1rem;
+        }
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+    .copyright {
+        font-size: 1rem;
+        color: rgb(197, 181, 181);
+        margin-top: 2rem !important;
+        z-index: 1;
+      }
+  }
+
+  @keyframes moveStars {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: -1000px 1000px;
+    }
+  }
+
 
 
 }

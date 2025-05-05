@@ -825,9 +825,8 @@ useHead({
     .contact-heading {
       font-size: 3rem;
       font-weight: 800;
-      color: linear-gradient(to right, #ffffff, #b5ffd9, #ffdbdb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: rgb(204, 214, 246);
+      margin-bottom: 2rem;
       position: relative;
       z-index: 1;
     }

@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <Navbar />
     <Background />
     <div class="hero-section">
       <div class="profile-image animate-profile">
@@ -8,7 +9,7 @@
       <div class="hero-content">
         <h1 class="hero-title">
           <span>Manik Sheikh</span><br />
-          <span id="typewriter"></span> <br>
+          <span id="typewriter"></span> <br />
           <span class="gradient-text">Currently Work @CONNEKT STUDIO</span>
         </h1>
         <p class="hero-description">
@@ -39,7 +40,8 @@
             </div>
             <h3>Design</h3>
             <p class="build-description">
-              Creating intuitive user experiences and visually appealing interfaces.
+              Creating intuitive user experiences and visually appealing
+              interfaces.
             </p>
           </div>
           <div class="box-3">
@@ -61,7 +63,8 @@
         <div class="card" v-for="project in projects" :key="project.id" :class="project.colorClass"
           @click="handleProjectClick(project)">
           <div class="title-svg">
-            <h2>{{ project.title }}
+            <h2>
+              {{ project.title }}
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-external-link w-4 h-4 text-orange-400 opacity-70 group-hover:opacity-100 transition-colors">
@@ -121,7 +124,7 @@
             <span class="stack-icon">{{ stack.icon }}</span>
             <span class="stack-title">{{ stack.title }}</span>
           </h3>
-          <hr>
+          <hr />
           <div class="items-grid">
             <div v-for="item in stack.items" :key="item.name" class="tech-item">
               {{ item.name }}
@@ -147,18 +150,30 @@
           <Github /> <span>GitHub</span>
         </a>
       </div>
-      <hr>
+      <hr />
       <p class="copyright">
         &copy; {{ currentYear }} Manik Sheikh. All rights reserved.
       </p>
     </div>
-
   </div>
 </template>
 
 <script setup>
-import { Brain, Rocket, Target, Clock, Box, Users, Star, Mail, Twitter, Linkedin, Github } from "lucide-vue-next";
-import Background from '../components/Background.vue';
+import {
+  Brain,
+  Rocket,
+  Target,
+  Clock,
+  Box,
+  Users,
+  Star,
+  Mail,
+  Twitter,
+  Linkedin,
+  Github,
+} from "lucide-vue-next";
+import Background from "../components/Background.vue";
+import Navbar from "../components/Navbar.vue";
 import projects from "../data/projects.json";
 import stacks from "../data/techData.json";
 
@@ -166,13 +181,13 @@ const currentYear = new Date().getFullYear();
 
 const handleProjectClick = (project) => {
   if (project.link) {
-    window.open(project.link, '_blank');
+    window.open(project.link, "_blank");
   }
 };
 
 const handleTagClick = (project) => {
-  if (project.id === 'vocals') {
-    window.open('https://vocalo.ai/', '_blank');
+  if (project.id === "vocals") {
+    window.open("https://vocalo.ai/", "_blank");
   }
 };
 
@@ -184,7 +199,7 @@ useHead({
 // Typewriter effect
 onMounted(() => {
   const text = "Frontend Developer";
-  const typewriterElement = document.getElementById('typewriter');
+  const typewriterElement = document.getElementById("typewriter");
   let i = 0;
 
   function typeWriter() {
@@ -194,7 +209,7 @@ onMounted(() => {
       setTimeout(typeWriter, 100);
     } else {
       setTimeout(() => {
-        typewriterElement.textContent = '';
+        typewriterElement.textContent = "";
         i = 0;
         typeWriter();
       }, 3000);
@@ -207,7 +222,7 @@ onMounted(() => {
 <style lang="scss">
 .main-container {
   font-family: "Inter", sans-serif;
-  padding: 0;
+  padding: 70px 0 0 0;
   margin: 0;
   box-sizing: border-box;
   margin: auto;
@@ -220,12 +235,21 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     gap: 5rem;
-    height: 80vh;
-    padding: 0 2rem;
+    min-height: 80vh;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1400px;
+
+    @media (max-width: 968px) {
+      flex-direction: column;
+      gap: 3rem;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
 
     .profile-image {
-      width: 150px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       overflow: hidden;
       display: flex;
@@ -237,6 +261,11 @@ onMounted(() => {
       animation: border-glow 3s infinite;
       transition: transform 0.3s ease-in-out;
       cursor: pointer;
+
+      @media (max-width: 768px) {
+        width: 150px;
+        height: 150px;
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -258,12 +287,31 @@ onMounted(() => {
     .hero-content {
       width: 100%;
       max-width: 700px;
-      text-align: left;
+
+      @media (max-width: 968px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       .hero-title {
         font-size: 3.5rem;
         font-weight: 700;
-        color: rgb(75, 71, 71);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+
+        span:first-child {
+          background: linear-gradient(135deg, #ff4d4d, #f9cb28);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
 
         #typewriter {
           background: linear-gradient(90deg, #3a3eff, #e450b7);
@@ -280,6 +328,10 @@ onMounted(() => {
           -webkit-text-fill-color: transparent;
           transition: all 0.3s ease-in-out;
           display: inline-block;
+
+          @media (max-width: 768px) {
+            font-size: 1.2rem;
+          }
         }
       }
 
@@ -288,6 +340,12 @@ onMounted(() => {
         font-weight: 400;
         color: #807878;
         line-height: 1.6;
+        max-width: 600px;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
       }
     }
   }
@@ -308,16 +366,22 @@ onMounted(() => {
         width: 100%;
 
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          color: linear-gradient(135deg, rgba(58, 62, 255, 0.1), rgba(228, 80, 183, 0.1));
+          color: linear-gradient(135deg,
+              rgba(58, 62, 255, 0.1),
+              rgba(228, 80, 183, 0.1));
           filter: blur(8px);
           z-index: -1;
           border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
         }
       }
 
@@ -326,6 +390,16 @@ onMounted(() => {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 2rem;
         padding: 0 2rem;
+
+        @media (max-width: 968px) {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0 1rem;
+        }
+
+        @media (max-width: 640px) {
+          grid-template-columns: 1fr;
+          padding: 0 1rem;
+        }
 
         .box-1,
         .box-2,
@@ -342,6 +416,11 @@ onMounted(() => {
           padding: 2rem;
           cursor: pointer;
           transition: all 0.3s ease-in-out;
+
+          @media (max-width: 768px) {
+            min-height: 200px;
+            padding: 1.5rem;
+          }
 
           .icon-wrapper {
             transition: all 0.3s ease-in-out;
@@ -411,18 +490,31 @@ onMounted(() => {
             width: 40px;
             height: 40px;
             margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+              width: 32px;
+              height: 32px;
+            }
           }
 
           h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.25rem;
+            }
           }
 
           .build-description {
             font-size: 1rem;
             color: #807878;
             line-height: 1.5;
+
+            @media (max-width: 768px) {
+              font-size: 0.9rem;
+            }
           }
         }
       }
@@ -452,6 +544,11 @@ onMounted(() => {
     padding: 2rem 0;
     min-height: 60vh;
 
+    @media (max-width: 768px) {
+      margin-top: 3rem;
+      min-height: 100%;
+    }
+
     h1 {
       text-align: center;
       font-size: 3rem;
@@ -465,14 +562,25 @@ onMounted(() => {
       width: 100%;
       position: relative;
 
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
+      }
+
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        color: linear-gradient(135deg, rgba(58, 62, 255, 0.1), rgba(228, 80, 183, 0.1));
+        color: linear-gradient(135deg,
+            rgba(58, 62, 255, 0.1),
+            rgba(228, 80, 183, 0.1));
         filter: blur(8px);
         z-index: -1;
         border-radius: 8px;
@@ -484,6 +592,16 @@ onMounted(() => {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
       justify-items: center;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
     }
 
     .card {
@@ -497,8 +615,14 @@ onMounted(() => {
       overflow: hidden;
       cursor: pointer;
 
+      @media (max-width: 768px) {
+        padding: 1.5rem;
+        width: 92%;
+      }
+
+
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -540,12 +664,22 @@ onMounted(() => {
           width: 100%;
           gap: 0.5rem;
 
+          @media (max-width: 768px) {
+            font-size: 1.1rem;
+          }
+
           svg {
             width: 1.3rem;
             height: 1.3rem;
             stroke: currentColor;
             opacity: 0.7;
             cursor: pointer;
+
+
+            @media (max-width: 768px) {
+              width: 1rem;
+              height: 1rem;
+            }
           }
         }
       }
@@ -555,12 +689,20 @@ onMounted(() => {
         color: #c5c5c5;
         margin-bottom: 1.2rem;
         line-height: 1.6;
+
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+        }
       }
 
       .tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.8rem;
+
+        @media (max-width: 768px) {
+          gap: 0.6rem;
+        }
 
         .tag {
           font-size: 0.75rem;
@@ -573,13 +715,18 @@ onMounted(() => {
           position: relative;
           overflow: hidden;
 
+          @media (max-width: 768px) {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+          }
+
           &:hover {
             border-color: rgba(255, 255, 255, 0.3);
             box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
             cursor: pointer;
 
             &::before {
-              content: '';
+              content: "";
               position: absolute;
               top: 0;
               left: -100%;
@@ -623,7 +770,14 @@ onMounted(() => {
 
   .achievements {
     margin-top: 4rem;
-    height: 50vh;
+    padding: 2rem;
+    min-height: 50vh;
+
+    @media (max-width: 768px) {
+      margin-top: 2rem;
+      padding: 1rem;
+      min-height: auto;
+    }
 
     .title {
       text-align: center;
@@ -637,6 +791,16 @@ onMounted(() => {
       position: relative;
       display: inline-block;
       width: 100%;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
     }
 
     .grid {
@@ -645,13 +809,17 @@ onMounted(() => {
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1rem;
 
       @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
       }
 
       @media (max-width: 640px) {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0;
       }
 
       .card {
@@ -665,83 +833,69 @@ onMounted(() => {
         overflow: hidden;
         cursor: pointer;
 
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        @media (max-width: 768px) {
+          padding: 1.5rem;
         }
 
-        &:nth-child(1) {
-          border: 2px solid rgba(228, 80, 183, 0.3);
-          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        @media (max-width: 480px) {
+          padding: 1.25rem;
+        }
 
-          &:hover {
-            border-color: rgba(228, 80, 183, 0.8);
-            box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
-          }
+        &:hover {
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+          &:nth-child(1) {
+          border: 2px solid #3a3eff;
+          box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
         }
 
         &:nth-child(2) {
-          border: 2px solid rgba(58, 62, 255, 0.3);
-          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-
-          &:hover {
-            border-color: rgba(58, 62, 255, 0.8);
-            box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
-          }
+          border: 2px solid #e450b7;
+          box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
         }
 
         &:nth-child(3) {
-          border: 2px solid rgba(0, 255, 136, 0.3);
-          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-
-          &:hover {
-            border-color: rgba(0, 255, 136, 0.8);
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
-          }
+          border: 2px solid #00ff88;
+          box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
         }
 
         &:nth-child(4) {
-          border: 2px solid rgba(255, 215, 0, 0.3);
-          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-
-          &:hover {
-            border-color: rgba(255, 215, 0, 0.8);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
-          }
+          border: 2px solid #ffd700;
+          box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+        }
         }
 
         .icon {
-          width: 44px;
-          height: 44px;
-          margin: 0 auto 1.5rem;
+          margin-bottom: 1rem;
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: transform 0.3s ease;
 
           svg {
-            width: 100%;
-            height: 100%;
+            width: 2rem;
+            height: 2rem;
+            color: #00ff88;
+
+            @media (max-width: 768px) {
+              width: 1.75rem;
+              height: 1.75rem;
+            }
           }
 
-          &:hover {
-            transform: scale(1.1);
+          &.clock svg {
+            color: #e450b7;
           }
 
-          &.clock {
-            color: #FF6B6B; // Warm red
+          &.box svg {
+            color: #3a3eff;
           }
 
-          &.box {
-            color: #4ECDC4; // Turquoise
+          &.users svg {
+            color: #00ff88;
           }
 
-          &.users {
-            color: #45B7D1;
-          }
-
-          &.star {
-            color: #FFD93D; // Bright yellow
+          &.star svg {
+            color: #ffd700;
           }
         }
 
@@ -749,15 +903,27 @@ onMounted(() => {
           font-size: 2.5rem;
           font-weight: 700;
           margin-bottom: 0.5rem;
-          background: linear-gradient(90deg, #00cfff, #3a3eff);
+          background: linear-gradient(135deg, #00ff88, #00cfff);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
+
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1.75rem;
+          }
         }
 
         .label {
           font-size: 1rem;
           color: #807878;
-          font-weight: 500;
+
+          @media (max-width: 768px) {
+            font-size: 0.9rem;
+          }
         }
       }
     }
@@ -776,6 +942,10 @@ onMounted(() => {
     padding: 4rem 2rem;
     font-family: Inter, "Segoe UI", sans-serif;
 
+    @media (max-width: 768px) {
+      padding: 2rem 1rem;
+    }
+
     h2 {
       text-align: center;
       font-size: 3rem;
@@ -788,6 +958,10 @@ onMounted(() => {
       position: relative;
       display: inline-block;
       width: 100%;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
     }
 
     .tech-stacks {
@@ -832,9 +1006,10 @@ onMounted(() => {
             -webkit-text-fill-color: transparent;
             position: relative;
             display: inline-block;
-            background: linear-gradient(90deg, rgb(100, 255, 218), rgb(204, 214, 246)) text;
+            background: linear-gradient(90deg,
+                rgb(100, 255, 218),
+                rgb(204, 214, 246)) text;
           }
-
         }
 
         .items-grid {
@@ -889,72 +1064,125 @@ onMounted(() => {
   }
 
   .footer-section {
+    margin-top: 8rem;
+    padding: 4rem 2rem;
     text-align: center;
-    padding: 4rem 1rem;
+    border-radius: 1rem;
     position: relative;
-    overflow: hidden;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      color: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-      opacity: 0.1;
-      z-index: 0;
+    @media (max-width: 768px) {
+      margin-top: 3rem;
+      padding: 2rem 1rem;
     }
 
     .contact-heading {
       font-size: 3rem;
-      font-weight: 800;
-      color: rgb(204, 214, 246);
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, #00ff88, #3a3eff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
+      }
     }
 
     .contact-icons {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
-      margin: 2rem 0;
-      position: relative;
-      z-index: 1;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+
+      @media (max-width: 768px) {
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 480px) {
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+      }
 
       .contact-item {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
+        color: #fff;
         text-decoration: none;
-        color: #807878;
-        background: transparent;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+
+        @media (max-width: 480px) {
+          width: 80%;
+          justify-content: center;
+        }
 
         svg {
-          width: 20px;
-          height: 20px;
+          width: 1.5rem;
+          height: 1.5rem;
+          transition: color 0.3s ease;
         }
 
         span {
           font-size: 1rem;
+          transition: color 0.3s ease;
+
+          @media (max-width: 768px) {
+            font-size: 0.9rem;
+          }
         }
 
         &:hover {
-          color: #4359d6;
-          transform: translateY(-2px);
+          svg, span {
+            background: linear-gradient(135deg, #00ff88, #3a3eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
         }
       }
     }
 
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 2rem 0;
+
+      @media (max-width: 768px) {
+        margin: 1.5rem 0;
+      }
+    }
+
     .copyright {
+      background: linear-gradient(90deg, #06c2cf, #d32ca1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       font-size: 1rem;
-      color: rgb(197, 181, 181);
-      margin-top: 2rem !important;
-      z-index: 1;
+      text-align: center;
+      opacity: 20;
+      transition: opacity 0.3s ease;
+      
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
@@ -967,23 +1195,20 @@ onMounted(() => {
       background-position: -1000px 1000px;
     }
   }
-
-
-
 }
 
 // Animations
 @keyframes border-glow {
   0% {
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(228, 80, 183, 0.2);
   }
 
   50% {
-    border-color: rgba(0, 207, 255, 0.5);
+    box-shadow: 0 0 30px rgba(228, 80, 183, 0.4);
   }
 
   100% {
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(228, 80, 183, 0.2);
   }
 }
 

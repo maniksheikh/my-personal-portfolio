@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <Background />
     <div class="hero-section">
       <div class="profile-image animate-profile">
         <img src="/profile.JPG" alt="Profile" />
@@ -7,7 +8,7 @@
       <div class="hero-content">
         <h1 class="hero-title">
           <span>Manik Sheikh</span><br />
-          <span>Frontend Developer</span>
+          <span id="typewriter"></span> <br>
           <span class="gradient-text">Currently Work @CONNEKT STUDIO</span>
         </h1>
         <p class="hero-description">
@@ -156,7 +157,8 @@
 </template>
 
 <script setup>
-import { Brain, Rocket, Target, Clock, Box, Users, Star, Mail,  Twitter, Linkedin, Github  } from "lucide-vue-next";
+import { Brain, Rocket, Target, Clock, Box, Users, Star, Mail, Twitter, Linkedin, Github } from "lucide-vue-next";
+import Background from '../components/Background.vue';
 import projects from "../data/projects.json";
 import stacks from "../data/techData.json";
 
@@ -178,6 +180,28 @@ useHead({
   title: "My Portfolio",
   meta: [{ name: "description", content: "My Portfolio" }],
 });
+
+// Typewriter effect
+onMounted(() => {
+  const text = "Frontend Developer";
+  const typewriterElement = document.getElementById('typewriter');
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      typewriterElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    } else {
+      setTimeout(() => {
+        typewriterElement.textContent = '';
+        i = 0;
+        typeWriter();
+      }, 3000);
+    }
+  }
+  typeWriter();
+});
 </script>
 
 <style lang="scss">
@@ -188,6 +212,7 @@ useHead({
   box-sizing: border-box;
   margin: auto;
   max-width: 1200px;
+  z-index: 10000000;
 
   .hero-section {
     display: flex;
@@ -240,6 +265,13 @@ useHead({
         font-weight: 700;
         color: rgb(75, 71, 71);
 
+        #typewriter {
+          background: linear-gradient(90deg, #3a3eff, #e450b7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        }
+
         .gradient-text {
           font-size: 1.5rem;
           font-weight: 600;
@@ -266,8 +298,27 @@ useHead({
         text-align: center;
         font-size: 3rem;
         font-weight: 700;
-        color: rgb(75, 71, 71);
+        background: linear-gradient(135deg, #3a3eff, #e450b7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          color: linear-gradient(135deg, rgba(58, 62, 255, 0.1), rgba(228, 80, 183, 0.1));
+          filter: blur(8px);
+          z-index: -1;
+          border-radius: 8px;
+        }
       }
 
       .box-content {
@@ -406,6 +457,26 @@ useHead({
       font-size: 3rem;
       margin-bottom: 3rem;
       font-weight: bold;
+      background: linear-gradient(135deg, #e450b7, #ff6b6b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      width: 100%;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: linear-gradient(135deg, rgba(58, 62, 255, 0.1), rgba(228, 80, 183, 0.1));
+        filter: blur(8px);
+        z-index: -1;
+        border-radius: 8px;
+      }
     }
 
     .grid {
@@ -558,8 +629,14 @@ useHead({
       text-align: center;
       font-size: 3rem;
       font-weight: 700;
-      color: rgb(75, 71, 71);
+      background: linear-gradient(135deg, #00ff88, #00cfff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
     }
 
     .grid {
@@ -586,6 +663,7 @@ useHead({
         border: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
         overflow: hidden;
+        cursor: pointer;
 
         &:hover {
           transform: translateY(-5px);
@@ -702,14 +780,20 @@ useHead({
       text-align: center;
       font-size: 3rem;
       font-weight: 700;
-      color: $text-primary;
+      background: linear-gradient(135deg, #ffd400, #ff5ca2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
     }
 
     .tech-stacks {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 3rem;
       max-width: 1200px;
       margin: 0 auto;
 
@@ -860,16 +944,18 @@ useHead({
         }
 
         &:hover {
-          color: rgba(255, 255, 255, 0.1);
+          color: #4359d6;
+          transform: translateY(-2px);
         }
       }
     }
+
     .copyright {
-        font-size: 1rem;
-        color: rgb(197, 181, 181);
-        margin-top: 2rem !important;
-        z-index: 1;
-      }
+      font-size: 1rem;
+      color: rgb(197, 181, 181);
+      margin-top: 2rem !important;
+      z-index: 1;
+    }
   }
 
   @keyframes moveStars {
@@ -946,6 +1032,29 @@ useHead({
 @keyframes shine {
   to {
     left: 100%;
+  }
+}
+
+.hero-section {
+  .hero-content {
+    .hero-title {
+      .typewriter {
+        #typewriter {
+          display: inline-block;
+          color: rgba(64, 224, 208, 0.9);
+          font-weight: bold;
+          border-right: 3px solid rgba(64, 224, 208, 0.7);
+          padding-right: 5px;
+          animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            border-color: transparent;
+          }
+        }
+      }
+    }
   }
 }
 </style>

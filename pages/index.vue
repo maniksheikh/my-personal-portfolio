@@ -2,7 +2,7 @@
   <div class="main-container">
     <Navbar />
     <Background />
-    <div class="hero-section">
+    <div id="/" class="hero-section">
       <div class="profile-image animate-profile">
         <img src="/profile.JPG" alt="Profile" />
       </div>
@@ -57,7 +57,7 @@
       </div>
     </div>
     <!-- Projects section -->
-    <div class="projects-container">
+    <div id="projects" class="projects-container">
       <h1>Projects</h1>
       <div class="grid">
         <div class="card" v-for="project in projects" :key="project.id" :class="project.colorClass"
@@ -116,7 +116,7 @@
       </div>
     </section>
     <!-- Tech Stack Skills -->
-    <div class="tech-stack-container">
+    <div id="skills" class="tech-stack-container">
       <h2>Skills & Technologies</h2>
       <div class="tech-stacks">
         <div class="stacks" v-for="(stack, index) in stacks" :key="index">
@@ -134,7 +134,7 @@
       </div>
     </div>
     <!-- Footer section  -->
-    <div class="footer-section">
+    <div id="contact" class="footer-section">
       <h2 class="contact-heading">Get in Touch</h2>
       <div class="contact-icons">
         <a href="mailto:example@email.com" class="contact-item">
@@ -200,21 +200,37 @@ useHead({
 onMounted(() => {
   const text = "Frontend Developer";
   const typewriterElement = document.getElementById("typewriter");
+  let isDeleting = false;
   let i = 0;
+  let delta = 100;
 
   function typeWriter() {
-    if (i < text.length) {
-      typewriterElement.textContent += text.charAt(i);
+    const currentText = typewriterElement.textContent;
+    
+    if (!isDeleting && i <= text.length) {
+      typewriterElement.textContent = text.substring(0, i);
       i++;
-      setTimeout(typeWriter, 100);
-    } else {
-      setTimeout(() => {
-        typewriterElement.textContent = "";
-        i = 0;
-        typeWriter();
-      }, 3000);
+      delta = 100;
+    } else if (isDeleting && i >= 0) {
+      typewriterElement.textContent = text.substring(0, i);
+      i--;
+      delta = 50;
     }
+
+    if (i === text.length + 1) {
+      isDeleting = true;
+      delta = 2000;
+    }
+
+    if (i === -1) {
+      isDeleting = false;
+      i = 0;
+      delta = 500;
+    }
+
+    setTimeout(typeWriter, delta);
   }
+
   typeWriter();
 });
 </script>
@@ -248,8 +264,8 @@ onMounted(() => {
     }
 
     .profile-image {
-      width: 180px;
-      height: 180px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
       overflow: hidden;
       display: flex;
@@ -295,7 +311,7 @@ onMounted(() => {
       }
 
       .hero-title {
-        font-size: 3.5rem;
+        font-size: 3.7rem;
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 1.5rem;
@@ -305,12 +321,12 @@ onMounted(() => {
         }
 
         span:first-child {
-          background: linear-gradient(135deg, #ff4d4d, #f9cb28);
+          background: linear-gradient(135deg, #4e54c8, #8f94fb);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
           display: inline-block;
-          margin-bottom: 10px;
+          margin-bottom: 15px;
         }
 
         #typewriter {
@@ -336,9 +352,9 @@ onMounted(() => {
       }
 
       .hero-description {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 400;
-        color: #807878;
+        color: #f8f4f4;
         line-height: 1.6;
         max-width: 600px;
 
@@ -354,13 +370,13 @@ onMounted(() => {
     .build-content {
       .build-title {
         text-align: center;
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: 700;
         background: linear-gradient(135deg, #3a3eff, #e450b7);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         position: relative;
         display: inline-block;
         width: 100%;
@@ -498,7 +514,7 @@ onMounted(() => {
           }
 
           h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 1rem;
 
@@ -509,8 +525,8 @@ onMounted(() => {
 
           .build-description {
             font-size: 1rem;
-            color: #807878;
-            line-height: 1.5;
+            color: #f8f4f4;
+            line-height: 1.7;
 
             @media (max-width: 768px) {
               font-size: 0.9rem;
@@ -551,7 +567,7 @@ onMounted(() => {
 
     h1 {
       text-align: center;
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 3rem;
       font-weight: bold;
       background: linear-gradient(135deg, #e450b7, #ff6b6b);
@@ -809,7 +825,6 @@ onMounted(() => {
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
 
       @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
@@ -845,24 +860,24 @@ onMounted(() => {
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
           &:nth-child(1) {
-          border: 2px solid #3a3eff;
-          box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
-        }
+            border: 2px solid #3a3eff;
+            box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
+          }
 
-        &:nth-child(2) {
-          border: 2px solid #e450b7;
-          box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
-        }
+          &:nth-child(2) {
+            border: 2px solid #e450b7;
+            box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
+          }
 
-        &:nth-child(3) {
-          border: 2px solid #00ff88;
-          box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
-        }
+          &:nth-child(3) {
+            border: 2px solid #00ff88;
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
+          }
 
-        &:nth-child(4) {
-          border: 2px solid #ffd700;
-          box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
-        }
+          &:nth-child(4) {
+            border: 2px solid #ffd700;
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+          }
         }
 
         .icon {
@@ -919,7 +934,7 @@ onMounted(() => {
 
         .label {
           font-size: 1rem;
-          color: #807878;
+          color: #f8f4f4;
 
           @media (max-width: 768px) {
             font-size: 0.9rem;
@@ -1151,7 +1166,9 @@ onMounted(() => {
         }
 
         &:hover {
-          svg, span {
+
+          svg,
+          span {
             background: linear-gradient(135deg, #00ff88, #3a3eff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1179,7 +1196,7 @@ onMounted(() => {
       text-align: center;
       opacity: 20;
       transition: opacity 0.3s ease;
-      
+
       &:hover {
         opacity: 1;
       }

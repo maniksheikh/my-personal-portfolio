@@ -23,7 +23,7 @@ const init = () => {
   document.getElementById('background-canvas').appendChild(renderer.domElement);
 
   // Create sphere geometry
-  const geometry = new THREE.IcosahedronGeometry(6, 3);
+  const geometry = new THREE.IcosahedronGeometry(4, 2);
   const material = new THREE.MeshBasicMaterial({
     color: 0x64ffda,
     wireframe: true,
@@ -45,10 +45,10 @@ const init = () => {
   });
 
   const starVertices = [];
-  for (let i = 0; i < 2000; i++) {
-    const x = (Math.random() - 0.5) * 200;
-    const y = (Math.random() - 0.5) * 200;
-    const z = (Math.random() - 0.5) * 200;
+  for (let i = 0; i < 4000; i++) {
+    const x = (Math.random() - 0.6) * 600;
+    const y = (Math.random() - 0.6) * 600;
+    const z = (Math.random() - 0.6) * 600;
     starVertices.push(x, y, z);
   }
 
@@ -118,7 +118,7 @@ onBeforeUnmount(() => {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(6, 21, 43, 0.85);
 }
 
 :deep(.hero-title),

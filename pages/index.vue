@@ -4,7 +4,7 @@
     <Background />
     <div id="/" class="hero-section">
       <div class="profile-image animate-profile">
-        <img src="/profile.JPG" alt="Profile" />
+        <img src="/manik.JPG" alt="Profile" />
       </div>
       <div class="hero-content">
         <h1 class="hero-title">
@@ -1079,14 +1079,13 @@ onMounted(() => {
   }
 
   .footer-section {
-    margin-top: 8rem;
+    margin-top: 3rem;
     padding: 4rem 2rem;
     text-align: center;
     border-radius: 1rem;
     position: relative;
 
     @media (max-width: 768px) {
-      margin-top: 3rem;
       padding: 2rem 1rem;
     }
 
@@ -1274,29 +1273,6 @@ onMounted(() => {
 @keyframes shine {
   to {
     left: 100%;
-  }
-}
-
-.hero-section {
-  .hero-content {
-    .hero-title {
-      .typewriter {
-        #typewriter {
-          display: inline-block;
-          color: rgba(64, 224, 208, 0.9);
-          font-weight: bold;
-          border-right: 3px solid rgba(64, 224, 208, 0.7);
-          padding-right: 5px;
-          animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-          50% {
-            border-color: transparent;
-          }
-        }
-      }
-    }
   }
 }
 </style>

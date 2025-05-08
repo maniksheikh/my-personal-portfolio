@@ -4,7 +4,7 @@
     <Background />
     <div id="/" class="hero-section">
       <div class="profile-image animate-profile">
-        <img src="/manik.JPG" alt="Profile" />
+        <img src="/portfolio-img.JPG" alt="Profile" />
       </div>
       <div class="hero-content">
         <h1 class="hero-title">
@@ -274,7 +274,7 @@ onMounted(() => {
 
 <style lang="scss">
 .main-container {
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 70px 0 0 0;
   margin: 0;
   box-sizing: border-box;

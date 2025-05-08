@@ -136,20 +136,39 @@
     <!-- Footer section  -->
     <div id="contact" class="footer-section">
       <h2 class="contact-heading">Get in Touch</h2>
-      <div class="contact-icons">
+      <div class="contact-container">
+        <div class="contact-form">
+          <form @submit.prevent="handleSubmit">
+            <div class="form-group">
+              <input type="text" v-model="formData.name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" v-model="formData.email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <input type="text" v-model="formData.subject" placeholder="Subject" required />
+            </div>
+            <div class="form-group">
+              <textarea v-model="formData.message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-icons">
+          <a href="https://www.linkedin.com/in/muhammad-manik-sheikh-6ab92433b/" target="_blank" class="contact-item">
+          <Linkedin /> <span>LinkedIn</span>
+        </a>
         <a href="mailto:example@email.com" class="contact-item">
           <Mail /> <span>Email</span>
-        </a>
-        <a href="https://x.com/dev_man50733" target="_blank" class="contact-item">
-          <Twitter /> <span>Twitter</span>
-        </a>
-        <a href="https://www.linkedin.com/in/muhammad-manik-sheikh-6ab92433b/" target="_blank" class="contact-item">
-          <Linkedin /> <span>LinkedIn</span>
         </a>
         <a href="https://github.com/maniksheikh" target="_blank" class="contact-item">
           <Github /> <span>GitHub</span>
         </a>
+        <a href="https://x.com/dev_man50733" target="_blank" class="contact-item">
+          <Twitter /> <span>Twitter</span>
+        </a>
       </div>
+    </div>
       <hr />
       <p class="copyright">
         &copy; {{ currentYear }} Manik Sheikh. All rights reserved.
@@ -176,6 +195,7 @@ import Background from "../components/Background.vue";
 import Navbar from "../components/Navbar.vue";
 import projects from "../data/projects.json";
 import stacks from "../data/techData.json";
+import { ref } from 'vue';
 
 const currentYear = new Date().getFullYear();
 
@@ -189,6 +209,23 @@ const handleTagClick = (project) => {
   if (project.id === "vocals") {
     window.open("https://vocalo.ai/", "_blank");
   }
+};
+
+const formData = ref({
+  name: '',
+  email: '',
+  subject: '',
+  message: ''
+});
+
+const handleSubmit = () => {
+  console.log('Form submitted:', formData.value);
+  formData.value = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
 };
 
 useHead({
@@ -785,7 +822,7 @@ onMounted(() => {
   }
 
   .achievements {
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding: 2rem;
     min-height: 50vh;
 
@@ -1079,18 +1116,85 @@ onMounted(() => {
   }
 
   .footer-section {
-    margin-top: 3rem;
     padding: 4rem 2rem;
     text-align: center;
     border-radius: 1rem;
     position: relative;
+    z-index: 1;
 
     @media (max-width: 768px) {
       padding: 2rem 1rem;
     }
 
+    .contact-form {
+      max-width: 650px;
+      margin: 0 auto 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1;
+
+      @media (max-width: 768px) {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 1rem;
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 0.5rem;
+          color: #fff;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #3a3eff;
+            background: rgba(255, 255, 255, 0.12);
+          }
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+          }
+        }
+
+        textarea {
+          min-height: 150px;
+          resize: vertical;
+        }
+      }
+
+      .submit-btn {
+        padding:12px 2rem ;
+        background: linear-gradient(135deg, #3a3eff, #e450b7);
+        border: none;
+        border-radius: 0.5rem;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(58, 62, 255, 0.3);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+
     .contact-heading {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 3rem;
       background: linear-gradient(135deg, #00ff88, #3a3eff);
@@ -1138,40 +1242,26 @@ onMounted(() => {
       .contact-item {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
-        color: #fff;
-        text-decoration: none;
+        padding: 1rem;
+        border-radius: 8px;
         transition: all 0.3s ease;
-        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: #fff;
 
-        @media (max-width: 480px) {
-          width: 80%;
-          justify-content: center;
+        &:hover {
+          color: #e450b7;
+          transform: translateY(-2px);
         }
 
         svg {
-          width: 1.5rem;
-          height: 1.5rem;
-          transition: color 0.3s ease;
+          width: 24px;
+          height: 24px;
         }
 
         span {
           font-size: 1rem;
-          transition: color 0.3s ease;
-
-          @media (max-width: 768px) {
-            font-size: 0.9rem;
-          }
-        }
-
-        &:hover {
-
-          svg,
-          span {
-            background: linear-gradient(135deg, #00ff88, #3a3eff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
         }
       }
     }

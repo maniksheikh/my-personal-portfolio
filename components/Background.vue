@@ -39,7 +39,7 @@ const init = () => {
   const starGeometry = new THREE.BufferGeometry();
   const starMaterial = new THREE.PointsMaterial({
     color: 0xffffff,
-    size: 0.3,
+    size: 0.5,
     transparent: true,
     opacity: 0.8
   });

@@ -4,7 +4,7 @@
     <Background />
     <div id="/" class="hero-section">
       <div class="profile-image animate-profile">
-        <img src="/assets/Manik.jpg" alt="Profile" />
+        <img src="/Manik.jpg" alt="Profile" />
       </div>
       <div class="hero-content">
         <h1 class="hero-title">
@@ -301,8 +301,8 @@ onMounted(() => {
     }
 
     .profile-image {
-      width: 190px;
-      height: 190px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       overflow: hidden;
       display: flex;
@@ -322,6 +322,7 @@ onMounted(() => {
 
       &:hover {
         transform: scale(1.05);
+        border: 1px gray solid;
       }
 
       img {

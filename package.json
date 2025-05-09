@@ -1,35 +1,14 @@
 {
   "name": "my-personal-portfolio",
-  "private": true,
-  "type": "module",
+  "version": "1.0.0",
+  "description": "```bash\r # npm\r npm install",
+  "main": "tailwind.config.js",
+  "devDependencies": {},
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "nuxt": "^3.8.0",
-    "sass": "^1.87.0",
-    "sass-loader": "^16.0.5",
-    "vite": "^6.3.5",
-    "vue": "^3.3.7",
-    "vue-router": "^4.2.5",
-    "webpack": "5"
-  },
-  "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.14.0",
-    "@pinia/nuxt": "^0.5.1",
-    "@supabase/supabase-js": "^2.38.4",
-    "lodash": "^4.17.21",
-    "lucide-vue-next": "^0.503.0",
-    "nuxt-icon": "^0.6.1",
-    "pinia": "^2.1.7",
-    "prisma": "^5.5.2",
-    "supabase": "^1.110.1",
-    "three": "^0.176.0"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

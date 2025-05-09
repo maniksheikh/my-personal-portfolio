@@ -138,20 +138,22 @@
       <h2 class="contact-heading">Get in Touch</h2>
       <div class="contact-container">
         <div class="contact-form">
-          <form @submit.prevent="handleSubmit">
+          <form @submit.prevent="handleSubmit" action="https://formspree.io/f/xovdlwqj" method="POST">
             <div class="form-group">
-              <input type="text" v-model="formData.name" placeholder="Your Name" required />
+              <input type="text" v-model="formData.name" name="name" placeholder="Your Name" required />
             </div>
             <div class="form-group">
-              <input type="email" v-model="formData.email" placeholder="Your Email" required />
+              <input type="email" v-model="formData.email" name="email" placeholder="Your Email" required />
             </div>
             <div class="form-group">
-              <input type="text" v-model="formData.subject" placeholder="Subject" required />
+              <input type="text" v-model="formData.subject" name="subject" placeholder="Subject" required />
             </div>
             <div class="form-group">
-              <textarea v-model="formData.message" placeholder="Your Message" required></textarea>
+              <textarea v-model="formData.message" name="message" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="submit-btn" :disabled="submitting">
+              {{ submitting ? 'Sending...' : 'Send Message' }}
+            </button>
           </form>
         </div>
         <div class="contact-icons">
@@ -195,7 +197,7 @@ import Background from "../components/Background.vue";
 import Navbar from "../components/Navbar.vue";
 import projects from "../data/projects.json";
 import stacks from "../data/techData.json";
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 
 const currentYear = new Date().getFullYear();
 
@@ -218,14 +220,48 @@ const formData = ref({
   message: ''
 });
 
-const handleSubmit = () => {
-  console.log('Form submitted:', formData.value);
-  formData.value = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  };
+const submitting = ref(false);
+
+const handleSubmit = async (e) => {
+  submitting.value = true;
+  
+  try {
+    const form = e.target;
+    const formDataToSend = new FormData(form);
+    
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formDataToSend,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      // Reset form data
+      formData.value = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      };
+      
+      // Clear the form inputs
+      form.reset();
+      
+      // Force Vue to update the UI
+      await nextTick();
+      
+      alert('Thank you for your message! I will get back to you soon.');
+    } else {
+      throw new Error('Failed to send message');
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    alert('Sorry, there was an error sending your message. Please try again later.');
+  } finally {
+    submitting.value = false;
+  }
 };
 
 useHead({
@@ -824,7 +860,7 @@ onMounted(() => {
 
   .achievements {
     margin-top: 2rem;
-    padding: 2rem;
+    padding: 2rem 0;
     min-height: 50vh;
 
     @media (max-width: 768px) {

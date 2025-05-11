@@ -9,6 +9,12 @@ export default defineNuxtConfig({
           api: 'modern'
         }
       }
+    },
+    optimizeDeps: {
+      include: ['three']
     }
+  },
+  build: {
+    transpile: ['three']
   }
 })

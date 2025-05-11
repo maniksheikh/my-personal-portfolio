@@ -1,21 +1,24 @@
 {
-  "name": "my-personal-portfolio",
-  "packageManager": "yarn@4.6.0",
+  "name": "my-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "@types/three": "^0.176.0",
+    "lucide-vue": "^0.509.0",
+    "nuxt": "^3.17.2",
+    "three": "^0.176.0",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.0"
-  },
-  "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "lucide-vue-next": "^0.279.0",
-    "vue": "^3.3.4"
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "sass": "^1.88.0",
+    "sass-loader": "^16.0.5"
   }
 }

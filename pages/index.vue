@@ -58,28 +58,55 @@
     </div>
     <!-- Projects section -->
     <div id="projects" class="projects-container">
-      <h1>Projects</h1>
-      <div class="grid">
-        <div class="card" v-for="project in projects" :key="project.id" :class="project.colorClass"
-          @click="handleProjectClick(project)">
-          <div class="title-svg">
-            <h2>
-              {{ project.title }}
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-external-link w-4 h-4 text-orange-400 opacity-70 group-hover:opacity-100 transition-colors">
-                <path d="M15 3h6v6"></path>
-                <path d="M10 14 21 3"></path>
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              </svg>
-            </h2>
-          </div>
-          <p>{{ project.description }}</p>
-          <div class="tags">
-            <span v-for="tag in project.tags" :key="tag" class="tag" @click="handleTagClick(project)">{{ tag }}</span>
+      <h1>My Projects</h1>
+      <vue3-marquee
+        :duration="20"
+        :spacing="20"
+        :pauseOnHover="true"
+        gradient
+        gradientColor="[16, 16, 16]"
+      >
+        <div class="project-grid">
+          <div
+            class="project-card"
+            v-for="project in projects"
+            :key="project.id"
+            :class="project.colorClass"
+            @click="handleProjectClick(project)"
+          >
+            <div class="title-svg">
+              <h2>
+                {{ project.title }}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-external-link w-4 h-4 text-orange-400 opacity-70 group-hover:opacity-100 transition-colors"
+                >
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14 21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </h2>
+            </div>
+            <p>{{ project.description }}</p>
+            <div class="tags">
+              <span
+                v-for="tag in project.tags"
+                :key="tag"
+                class="tag"
+                @click="handleTagClick(project)"
+              >{{ tag }}</span>
+            </div>
           </div>
         </div>
-      </div>
+      </vue3-marquee>
     </div>
     <!-- Achivement section -->
     <section class="achievements">
@@ -180,6 +207,7 @@
 </template>
 
 <script setup>
+import { Vue3Marquee } from 'vue3-marquee';
 import {
   Brain,
   Rocket,
@@ -221,7 +249,6 @@ const formData = ref({
 });
 
 const submitting = ref(false);
-
 const handleSubmit = async (e) => {
   submitting.value = true;
   
@@ -238,7 +265,6 @@ const handleSubmit = async (e) => {
     });
     
     if (response.ok) {
-      // Reset form data
       formData.value = {
         name: '',
         email: '',
@@ -246,10 +272,7 @@ const handleSubmit = async (e) => {
         message: ''
       };
       
-      // Clear the form inputs
       form.reset();
-      
-      // Force Vue to update the UI
       await nextTick();
       
       alert('Thank you for your message! I will get back to you soon.');
@@ -677,24 +700,29 @@ onMounted(() => {
       }
     }
 
-    .grid {
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
-      justify-items: center;
+      width: 100%;
+      padding: 0 2rem;
 
-      @media (max-width: 768px) {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 968px) {
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
 
       @media (max-width: 480px) {
         grid-template-columns: 1fr;
-        padding: 0;
       }
     }
 
-    .card {
+    .project-card {
+      width: 400px;
       background: linear-gradient(145deg, #0e0e12, #16161d);
       border-radius: 1rem;
       padding: 2rem;
@@ -707,7 +735,7 @@ onMounted(() => {
 
       @media (max-width: 768px) {
         padding: 1.5rem;
-        width: 92%;
+        min-width: unset;
       }
 
 
@@ -852,7 +880,7 @@ onMounted(() => {
         color: #ffa933;
       }
 
-      &.word h2 {
+      &.product-shoping h2 {
         color: #ff5260;
       }
     }

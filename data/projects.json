@@ -18,10 +18,18 @@
   {
     "id": "story",
     "title": "AiStoryGen",
-    "description": "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
+    "description": "This project demonstrates my ability to build scalable, professional-grade web applications using the latest frontend technologies and design standards.",
     "tags": ["Github", "Live Chat"],
     "colorClass": "story",
     "link": "https://aistorygen.org/"
+  },
+  {
+    "id": "product-shoping",
+    "title": "Product Shoping API",
+    "description": "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
+    "tags": ["Github", "Live Chat"],
+    "colorClass": "product-shoping",
+    "link": "https://nuxt3-api-product.netlify.app/"
   }
 ]
   

@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="navbar-container">
       <div class="logo">
-        <NuxtLink to="/">MS</NuxtLink>
+        <NuxtLink to="/">Manik Sheikh</NuxtLink>
       </div>
       <div class="menu-icon" @click="toggleMenu">
         <div class="bar" :class="{ active: isMenuOpen }"></div>
@@ -54,12 +54,18 @@ const closeMenu = () => {
       a {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #e450b7;
+        background: linear-gradient(135deg, #e450b7 0%, #6f42c1 50%, #2196f3 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
 
         &:hover {
-          color: #ff6b6b;
+          background: linear-gradient(135deg, #ff6b6b 0%, #e450b7 50%, #6f42c1 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
     }

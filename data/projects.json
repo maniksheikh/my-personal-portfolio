@@ -3,7 +3,7 @@
     "id": "vocals",
     "title": "Vocalo.ai",
     "description": "Gamify language learning with immersive AI conversations, personalised curriculum, and real-time comprehensive feedback.",
-    "tags": ["Github", "Live Chat"],
+    "tags": ["Live Chat"],
     "colorClass": "vocals",
     "link": "https://vocalo.ai/"
   },
@@ -11,7 +11,7 @@
     "id": "sketch",
     "title": "SketchToImage",
     "description": "Turn simple sketches into stunning, photorealistic artwork using AI diffusion models.",
-    "tags": ["Github", "Live Chat"],
+    "tags": ["Live Chat"],
     "colorClass": "sketch",
     "link": "https://sketchtoimage.com/"
   },
@@ -19,7 +19,7 @@
     "id": "story",
     "title": "AiStoryGen",
     "description": "This project demonstrates my ability to build scalable, professional-grade web applications using the latest frontend technologies and design standards.",
-    "tags": ["Github", "Live Chat"],
+    "tags": ["Live Chat"],
     "colorClass": "story",
     "link": "https://aistorygen.org/"
   },
@@ -27,9 +27,9 @@
     "id": "product-shoping",
     "title": "Product Shoping API",
     "description": "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
-    "tags": ["Github", "Live Chat"],
+    "tags": ["Live Chat"],
     "colorClass": "product-shoping",
-    "link": "https://nuxt3-api-product.netlify.app/"
+    "link": "https://nuxt3-api-products-project.pages.dev/"
   }
 ]
   

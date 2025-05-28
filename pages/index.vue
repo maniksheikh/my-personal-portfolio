@@ -38,7 +38,7 @@
             <div class="icon-wrapper">
               <Rocket />
             </div>
-            <h3>Design</h3>
+            <h3>Design Implement</h3>
             <p class="build-description">
               Creating intuitive user experiences and visually appealing
               interfaces.
@@ -48,14 +48,15 @@
             <div class="icon-wrapper">
               <Target />
             </div>
-            <h3>Marketing</h3>
+            <h3>Innovation</h3>
             <p class="build-description">
-              Building and growing products with effective marketing strategies.
+              Turning creative ideas into practical solutions with cutting-edge technologies.
             </p>
           </div>
         </div>
       </div>
     </div>
+    
     <!-- Projects section -->
     <div id="projects" class="projects-container">
       <h1>My Projects</h1>
@@ -123,22 +124,15 @@
           <div class="icon box">
             <Box />
           </div>
-          <div class="value">3+</div>
-          <div class="label">Products Launched</div>
+          <div class="value">5+</div>
+          <div class="label">Products Creating</div>
         </div>
         <div class="card">
-          <div class="icon users">
-            <Users />
+          <div class="icon code">
+            <Code />
           </div>
-          <div class="value">10k+</div>
-          <div class="label">Worldwide Users</div>
-        </div>
-        <div class="card">
-          <div class="icon star">
-            <Star />
-          </div>
-          <div class="value">3.2+</div>
-          <div class="label">Average Rating</div>
+          <div class="value">5+</div>
+          <div class="label">Technologies Mastered</div>
         </div>
       </div>
     </section>
@@ -220,6 +214,8 @@ import {
   Twitter,
   Linkedin,
   Github,
+  Code,
+  Book,
 } from "lucide-vue-next";
 import Background from "../components/Background.vue";
 import Navbar from "../components/Navbar.vue";
@@ -923,7 +919,7 @@ onMounted(() => {
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
@@ -1013,6 +1009,14 @@ onMounted(() => {
 
           &.star svg {
             color: #ffd700;
+          }
+          
+          &.code svg {
+            color: #00cfff;
+          }
+          
+          &.book svg {
+            color: #ff5ca2;
           }
         }
 

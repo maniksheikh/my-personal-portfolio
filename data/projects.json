@@ -30,6 +30,14 @@
     "tags": ["Live Chat"],
     "colorClass": "product-shoping",
     "link": "https://nuxt3-api-products-project.pages.dev/"
+  },
+   {
+    "id": "linkedin-clone",
+    "title": "Linkedin Clone",
+    "description": "Developed a responsive Linkedin-clone web app using Vue.js and Nuxt.js, with secure functionality.",
+    "tags": ["Live Chat"],
+    "colorClass": "linkedin-clone",
+    "link": "https://nuxt3-api-products-project.pages.dev/"
   }
 ]
   

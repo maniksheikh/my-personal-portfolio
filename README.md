@@ -1,8 +1,8 @@
 # My Personal Portfolio 
 
-### Create a stunning car dealership website using Nuxt 3 and Scss for a seamless user experience and a visually appealing design. This project will leverage the power of Nuxt 3, the latest version of the popular Vue.js framework, to build a fast, dynamic, and SEO-friendly website for a car dealership.The project fetches dynamic product data from a Fake API, enabling smooth integration of API-driven content. Scss will be used for efficient and responsive styling, making it easier to create a beautiful and user-friendly interface.
+### Explore my personal portfolio built with HTML, SCSS, and Three.js and Nuxt3 to showcase my skills in front-end development and creative web design. This site features smooth animations, interactive 3D elements, and a responsive layout that reflects my passion for modern web experiences.
 
-## https://api-product-project.netlify.app
+## https://my-personal-portfolio-8i5.pages.dev/
 
 
 

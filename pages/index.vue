@@ -56,7 +56,6 @@
         </div>
       </div>
     </div>
-    
     <!-- Projects section -->
     <div id="projects" class="projects-container">
       <h1>My Projects</h1>

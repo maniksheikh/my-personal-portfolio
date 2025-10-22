@@ -13,10 +13,10 @@
           <span class="gradient-text">Currently Work @CONNEKT STUDIO</span>
         </h1>
         <p class="hero-description">
-          "Hi, I'm Manik Sheikh — a self-taught Frontend Developer with 2 years
+          "Hi, I'm Manik Sheikh — a self-taught Frontend Developer with 2.5 years
           of experience. I specialize in building responsive, user-friendly web
           interfaces using modern technologies. Passionate about clean code,
-          UI/UX, and continuous learning.
+          UI/UX, and continuous learning. Now i am working Social media Marketing and learning this.
         </p>
       </div>
     </div>

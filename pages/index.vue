@@ -60,8 +60,8 @@
     <div id="projects" class="projects-container">
       <h1>My Projects</h1>
       <vue3-marquee
-        :duration="20"
-        :spacing="20"
+        :duration="25"
+        :spacing="40"
         :pauseOnHover="true"
         gradient
         gradientColor="[16, 16, 16]"
@@ -696,28 +696,23 @@ onMounted(() => {
     }
 
     .project-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
       gap: 2rem;
       width: 100%;
       padding: 0 2rem;
+      flex-wrap: nowrap;
+      align-items: stretch;
 
-      @media (max-width: 1200px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media (max-width: 968px) {
-        grid-template-columns: repeat(2, 1fr);
+      @media (max-width: 768px) {
         gap: 1.5rem;
-      }
-
-      @media (max-width: 480px) {
-        grid-template-columns: 1fr;
+        padding: 0 1rem;
       }
     }
 
     .project-card {
-      width: 400px;
+      min-width: 350px;
+      max-width: 400px;
+      width: 100%;
       background: linear-gradient(145deg, #0e0e12, #16161d);
       border-radius: 1rem;
       padding: 2rem;
@@ -727,10 +722,17 @@ onMounted(() => {
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      flex-shrink: 0;
 
       @media (max-width: 768px) {
         padding: 1.5rem;
-        min-width: unset;
+        min-width: 300px;
+        max-width: 350px;
+      }
+
+      @media (max-width: 480px) {
+        min-width: 280px;
+        max-width: 320px;
       }
 
 
@@ -877,6 +879,10 @@ onMounted(() => {
 
       &.product-shoping h2 {
         color: #ff5260;
+      }
+
+      &.linkedin-clone h2 {
+        color: #0077b5;
       }
     }
   }

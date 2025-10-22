@@ -141,7 +141,7 @@
       <div class="tech-stacks">
         <div class="stacks" v-for="(stack, index) in stacks" :key="index">
           <h3>
-            <span class="stack-icon">{{ stack.icon }}</span>
+            <span class="stack-icon" v-html="stack.icon"></span>
             <span class="stack-title">{{ stack.title }}</span>
           </h3>
           <hr />
@@ -220,7 +220,8 @@ import Background from "../components/Background.vue";
 import Navbar from "../components/Navbar.vue";
 import projects from "../data/projects.json";
 import stacks from "../data/techData.json";
-import { ref, nextTick } from 'vue';
+import { ref, nextTick, onMounted } from 'vue';
+import { useHead } from '@unhead/vue';
 
 const currentYear = new Date().getFullYear();
 
@@ -1134,7 +1135,9 @@ onMounted(() => {
             display: inline-block;
             background: linear-gradient(90deg,
                 rgb(100, 255, 218),
-                rgb(204, 214, 246)) text;
+                rgb(204, 214, 246));
+            -webkit-background-clip: text;
+            background-clip: text;
           }
         }
 

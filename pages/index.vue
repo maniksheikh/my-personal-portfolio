@@ -425,6 +425,7 @@ onMounted(() => {
         #typewriter {
           background: linear-gradient(90deg, #3a3eff, #e450b7);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           display: inline-block;
         }
@@ -434,6 +435,7 @@ onMounted(() => {
           font-weight: 600;
           background: linear-gradient(90deg, #00cfff, #3a3eff);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           transition: all 0.3s ease-in-out;
           display: inline-block;

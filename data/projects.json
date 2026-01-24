@@ -3,23 +3,29 @@
     "id": "vocals",
     "title": "Vocalo.ai",
     "description": "Gamify language learning with immersive AI conversations, personalised curriculum, and real-time comprehensive feedback.",
-    "tags": ["Live Chat"],
+    "tags": [
+      "Live Chat"
+    ],
     "colorClass": "vocals",
     "link": "https://vocalo.ai/"
   },
   {
-    "id": "sketch",
-    "title": "SketchToImage",
-    "description": "Turn simple sketches into stunning, photorealistic artwork using AI diffusion models.",
-    "tags": ["Live Chat"],
-    "colorClass": "sketch",
-    "link": "https://sketchtoimage.com/"
+    "id": "invoice",
+    "title": "Invoice Management System",
+    "description": "Invoice Management System is a comprehensive solution for creating, managing, and tracking invoices efficiently.",
+    "tags": [
+      "Live Chat"
+    ],
+    "colorClass": "invoice",
+    "link": "https://invoice-management-system.dev-maniksheikh.workers.dev/"
   },
   {
     "id": "story",
     "title": "AiStoryGen",
     "description": "This project demonstrates my ability to build scalable, professional-grade web applications using the latest frontend technologies and design standards.",
-    "tags": ["Live Chat"],
+    "tags": [
+      "Live Chat"
+    ],
     "colorClass": "story",
     "link": "https://aistorygen.org/"
   },
@@ -27,17 +33,20 @@
     "id": "product-shoping",
     "title": "Product Shoping API",
     "description": "Craft immersive stories with AI-generated narratives, visuals, and audio experiences.",
-    "tags": ["Live Chat"],
+    "tags": [
+      "Live Chat"
+    ],
     "colorClass": "product-shoping",
     "link": "https://nuxt3-api-products-project.pages.dev/"
   },
-   {
+  {
     "id": "linkedin-clone",
     "title": "Linkedin Clone",
     "description": "Developed a responsive Linkedin-clone web app using Vue.js and Nuxt.js, with secure functionality.",
-    "tags": ["Live Chat"],
+    "tags": [
+      "Live Chat"
+    ],
     "colorClass": "linkedin-clone",
     "link": "https://zippy-bombolone-3ed3cc.netlify.app/"
   }
 ]
-  

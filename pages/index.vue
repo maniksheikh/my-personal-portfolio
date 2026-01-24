@@ -864,6 +864,10 @@ onMounted(() => {
         color: #da71ff;
       }
 
+      &.invoice h2 {
+        color: #00ff88;
+      }
+
       &.sketch h2 {
         color: #ff5ca2;
       }

@@ -207,14 +207,11 @@ import {
   Target,
   Clock,
   Box,
-  Users,
-  Star,
   Mail,
   Twitter,
   Linkedin,
   Github,
   Code,
-  Book,
 } from "lucide-vue-next";
 import Background from "../components/Background.vue";
 import Navbar from "../components/Navbar.vue";
@@ -483,7 +480,7 @@ onMounted(() => {
           left: 0;
           width: 100%;
           height: 100%;
-          color: linear-gradient(135deg,
+          background: linear-gradient(135deg,
               rgba(58, 62, 255, 0.1),
               rgba(228, 80, 183, 0.1));
           filter: blur(8px);
@@ -689,7 +686,7 @@ onMounted(() => {
         left: 0;
         width: 100%;
         height: 100%;
-        color: linear-gradient(135deg,
+        background: linear-gradient(135deg,
             rgba(58, 62, 255, 0.1),
             rgba(228, 80, 183, 0.1));
         filter: blur(8px);
@@ -1366,7 +1363,7 @@ onMounted(() => {
       -webkit-text-fill-color: transparent;
       font-size: 1rem;
       text-align: center;
-      opacity: 20;
+      opacity: 0.6;
       transition: opacity 0.3s ease;
 
       &:hover {

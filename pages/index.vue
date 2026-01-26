@@ -734,7 +734,6 @@ onMounted(() => {
         box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
         background: linear-gradient(145deg, #12121a, #1a1a24);
         border-color: rgba(255, 255, 255, 0.1);
-
         .title-svg svg {
           opacity: 1;
         }
@@ -765,8 +764,6 @@ onMounted(() => {
             stroke: currentColor;
             opacity: 0.7;
             cursor: pointer;
-
-
             @media (max-width: 768px) {
               width: 1rem;
               height: 1rem;

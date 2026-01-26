@@ -536,15 +536,12 @@ onMounted(() => {
           &.box-1 {
             border: 2px solid rgba(58, 62, 255, 0.3);
             box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
-
             svg {
               color: #3a3eff;
             }
-
             h3 {
               color: #6567e6;
             }
-
             &:hover {
               border-color: rgba(58, 62, 255, 0.5);
               box-shadow: 0 10px 20px rgba(58, 62, 255, 0.2);
@@ -554,15 +551,12 @@ onMounted(() => {
           &.box-2 {
             border: 2px solid rgba(228, 80, 183, 0.3);
             box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
-
             svg {
               color: #e450b7;
             }
-
             h3 {
               color: #e26ebf;
             }
-
             &:hover {
               border-color: rgba(228, 80, 183, 0.5);
               box-shadow: 0 10px 20px rgba(228, 80, 183, 0.2);
@@ -572,15 +566,12 @@ onMounted(() => {
           &.box-3 {
             border: 2px solid rgba(0, 255, 136, 0.3);
             box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
-
             svg {
               color: #00ff88;
             }
-
             h3 {
               color: #53e29f;
             }
-
             &:hover {
               border-color: rgba(0, 255, 136, 0.5);
               box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
@@ -591,7 +582,6 @@ onMounted(() => {
             width: 40px;
             height: 40px;
             margin-bottom: 1rem;
-
             @media (max-width: 768px) {
               width: 32px;
               height: 32px;

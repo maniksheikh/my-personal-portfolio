@@ -64,16 +64,14 @@
         :spacing="40"
         :pauseOnHover="true"
         gradient
-        gradientColor="[16, 16, 16]"
-      >
+        gradientColor="[16, 16, 16]">
         <div class="project-grid">
           <div
             class="project-card"
             v-for="project in projects"
             :key="project.id"
             :class="project.colorClass"
-            @click="handleProjectClick(project)"
-          >
+            @click="handleProjectClick(project)">
             <div class="title-svg">
               <h2>
                 {{ project.title }}
@@ -87,8 +85,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="lucide lucide-external-link w-4 h-4 text-orange-400 opacity-70 group-hover:opacity-100 transition-colors"
-                >
+                  class="lucide lucide-external-link w-4 h-4 text-orange-400 opacity-70 group-hover:opacity-100 transition-colors">
                   <path d="M15 3h6v6"></path>
                   <path d="M10 14 21 3"></path>
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

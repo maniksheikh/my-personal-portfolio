@@ -292,7 +292,6 @@ onMounted(() => {
 
   function typeWriter() {
     const currentText = typewriterElement.textContent;
-    
     if (!isDeleting && i <= text.length) {
       typewriterElement.textContent = text.substring(0, i);
       i++;
@@ -313,12 +312,11 @@ onMounted(() => {
       i = 0;
       delta = 500;
     }
-
     setTimeout(typeWriter, delta);
   }
-
   typeWriter();
 });
+
 </script>
 
 <style lang="scss">

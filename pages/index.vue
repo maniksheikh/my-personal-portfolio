@@ -681,7 +681,6 @@ onMounted(() => {
       padding: 0 2rem;
       flex-wrap: nowrap;
       align-items: stretch;
-
       @media (max-width: 768px) {
         gap: 1.5rem;
         padding: 0 1rem;
@@ -708,12 +707,10 @@ onMounted(() => {
         min-width: 300px;
         max-width: 350px;
       }
-
       @media (max-width: 480px) {
         min-width: 280px;
         max-width: 320px;
       }
-
 
       &::before {
         content: "";

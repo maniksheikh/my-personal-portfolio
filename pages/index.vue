@@ -592,7 +592,6 @@ onMounted(() => {
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 1rem;
-
             @media (max-width: 768px) {
               font-size: 1.25rem;
             }
@@ -602,7 +601,6 @@ onMounted(() => {
             font-size: 1rem;
             color: #f8f4f4;
             line-height: 1.7;
-
             @media (max-width: 768px) {
               font-size: 0.9rem;
             }
@@ -617,10 +615,8 @@ onMounted(() => {
       .build-section {
         .build-content {
           grid-template-columns: 1fr;
-
           .build-title {
             font-size: 2.5rem;
-
             .gradient-text {
               font-size: 3rem;
             }

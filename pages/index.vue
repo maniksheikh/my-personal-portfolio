@@ -378,7 +378,6 @@ onMounted(() => {
         object-fit: cover;
         object-position: top;
         transition: transform 0.5s ease-in-out;
-
         &:hover {
           transform: scale(1.1);
         }
@@ -482,7 +481,6 @@ onMounted(() => {
           z-index: -1;
           border-radius: 8px;
         }
-
         @media (max-width: 768px) {
           font-size: 2.5rem;
         }

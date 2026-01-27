@@ -974,6 +974,7 @@ onMounted(() => {
           }   
           &.code svg {
             color: #00cfff; 
+          }
           &.book svg {
             color: #ff5ca2;
           }

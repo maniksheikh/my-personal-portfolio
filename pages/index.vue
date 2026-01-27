@@ -1036,7 +1036,6 @@ onMounted(() => {
       position: relative;
       display: inline-block;
       width: 100%;
-
       @media (max-width: 768px) {
         font-size: 2.5rem;
       }
@@ -1118,7 +1117,6 @@ onMounted(() => {
 
         &:nth-child(1) {
           border-color: rgba($primary-color, 0.3);
-
           &:hover {
             border-color: rgba($primary-color, 0.8);
           }
@@ -1126,7 +1124,6 @@ onMounted(() => {
 
         &:nth-child(2) {
           border-color: rgba($secondary-color, 0.3);
-
           &:hover {
             border-color: rgba($secondary-color, 0.8);
           }
@@ -1134,7 +1131,6 @@ onMounted(() => {
 
         &:nth-child(3) {
           border-color: rgba($accent-color, 0.3);
-
           &:hover {
             border-color: rgba($accent-color, 0.8);
           }

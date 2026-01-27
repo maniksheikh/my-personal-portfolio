@@ -881,7 +881,6 @@ onMounted(() => {
         font-size: 2.5rem;
         margin-bottom: 2rem;
       }
-
       @media (max-width: 480px) {
         font-size: 2rem;
         margin-bottom: 1.5rem;
@@ -899,7 +898,6 @@ onMounted(() => {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
-
       @media (max-width: 640px) {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -932,17 +930,14 @@ onMounted(() => {
             border: 2px solid #3a3eff;
             box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);
           }
-
           &:nth-child(2) {
             border: 2px solid #e450b7;
             box-shadow: 0 10px 20px rgba(228, 80, 183, 0.1);
           }
-
           &:nth-child(3) {
             border: 2px solid #00ff88;
             box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
           }
-
           &:nth-child(4) {
             border: 2px solid #ffd700;
             box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
@@ -959,7 +954,6 @@ onMounted(() => {
             width: 2rem;
             height: 2rem;
             color: #00ff88;
-
             @media (max-width: 768px) {
               width: 1.75rem;
               height: 1.75rem;

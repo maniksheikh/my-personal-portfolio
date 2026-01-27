@@ -777,7 +777,6 @@ onMounted(() => {
         color: #c5c5c5;
         margin-bottom: 1.2rem;
         line-height: 1.6;
-
         @media (max-width: 768px) {
           font-size: 0.9rem;
         }
@@ -787,7 +786,6 @@ onMounted(() => {
         display: flex;
         flex-wrap: wrap;
         gap: 0.8rem;
-
         @media (max-width: 768px) {
           gap: 0.6rem;
         }
@@ -812,7 +810,6 @@ onMounted(() => {
             border-color: rgba(255, 255, 255, 0.3);
             box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
             cursor: pointer;
-
             &::before {
               content: "";
               position: absolute;

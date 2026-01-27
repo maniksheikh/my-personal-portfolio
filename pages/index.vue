@@ -963,23 +963,17 @@ onMounted(() => {
           &.clock svg {
             color: #e450b7;
           }
-
           &.box svg {
             color: #3a3eff;
           }
-
           &.users svg {
             color: #00ff88;
           }
-
           &.star svg {
             color: #ffd700;
-          }
-          
+          }   
           &.code svg {
-            color: #00cfff;
-          }
-          
+            color: #00cfff; 
           &.book svg {
             color: #ff5ca2;
           }
@@ -997,7 +991,6 @@ onMounted(() => {
           @media (max-width: 768px) {
             font-size: 2rem;
           }
-
           @media (max-width: 480px) {
             font-size: 1.75rem;
           }
@@ -1006,7 +999,6 @@ onMounted(() => {
         .label {
           font-size: 1rem;
           color: #f8f4f4;
-
           @media (max-width: 768px) {
             font-size: 0.9rem;
           }

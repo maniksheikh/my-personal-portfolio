@@ -830,31 +830,24 @@ onMounted(() => {
       &.vocals h2 {
         color: #da71ff;
       }
-
       &.invoice h2 {
         color: #00ff88;
       }
-
       &.sketch h2 {
         color: #ff5ca2;
       }
-
       &.luna h2 {
         color: #ffd400;
       }
-
       &.photo h2 {
         color: #4cc7ff;
       }
-
       &.story h2 {
         color: #ffa933;
       }
-
       &.product-shoping h2 {
         color: #ff5260;
       }
-
       &.linkedin-clone h2 {
         color: #0077b5;
       }
@@ -865,7 +858,6 @@ onMounted(() => {
     margin-top: 2rem;
     padding: 2rem 0;
     min-height: 50vh;
-
     @media (max-width: 768px) {
       margin-top: 2rem;
       padding: 1rem;

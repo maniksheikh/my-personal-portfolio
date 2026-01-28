@@ -1333,11 +1333,9 @@ onMounted(() => {
   0% {
     box-shadow: 0 0 20px rgba(228, 80, 183, 0.2);
   }
-
   50% {
     box-shadow: 0 0 30px rgba(228, 80, 183, 0.4);
   }
-
   100% {
     box-shadow: 0 0 20px rgba(228, 80, 183, 0.2);
   }
@@ -1354,7 +1352,6 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(10px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);

@@ -1295,7 +1295,6 @@ onMounted(() => {
       border: none;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       margin: 2rem 0;
-
       @media (max-width: 768px) {
         margin: 1.5rem 0;
       }
@@ -1310,7 +1309,6 @@ onMounted(() => {
       text-align: center;
       opacity: 0.6;
       transition: opacity 0.3s ease;
-
       &:hover {
         opacity: 1;
       }
@@ -1321,7 +1319,6 @@ onMounted(() => {
     from {
       background-position: 0 0;
     }
-
     to {
       background-position: -1000px 1000px;
     }

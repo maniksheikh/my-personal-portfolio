@@ -1252,7 +1252,6 @@ onMounted(() => {
         gap: 1.5rem;
       }
 
-
       @media (max-width: 768px) {
         gap: 2rem;
         margin-bottom: 2rem;
@@ -1274,7 +1273,6 @@ onMounted(() => {
         transition: all 0.3s ease;
         text-decoration: none;
         color: #fff;
-
         &:hover {
           color: #e450b7;
           transform: translateY(-2px);
@@ -1284,7 +1282,6 @@ onMounted(() => {
           width: 24px;
           height: 24px;
         }
-
         span {
           font-size: 1rem;
         }

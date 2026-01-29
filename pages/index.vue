@@ -1107,7 +1107,6 @@ onMounted(() => {
             color: rgb(204, 214, 246);
             transition: $transition;
             cursor: pointer;
-
             &:hover {
               background: rgba(255, 255, 255, 0.12);
               color: white;
@@ -1178,13 +1177,11 @@ onMounted(() => {
           color: #fff;
           font-size: 1rem;
           transition: all 0.3s ease;
-
           &:focus {
             outline: none;
             border-color: #3a3eff;
             background: rgba(255, 255, 255, 0.12);
           }
-
           &::placeholder {
             color: rgba(255, 255, 255, 0.5);
           }

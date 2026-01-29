@@ -653,7 +653,6 @@ onMounted(() => {
         font-size: 2.5rem;
         margin-bottom: 2rem;
       }
-
       @media (max-width: 480px) {
         font-size: 2rem;
       }
@@ -800,7 +799,6 @@ onMounted(() => {
           backdrop-filter: blur(5px);
           position: relative;
           overflow: hidden;
-
           @media (max-width: 768px) {
             font-size: 0.7rem;
             padding: 0.25rem 0.5rem;
@@ -918,7 +916,6 @@ onMounted(() => {
         @media (max-width: 768px) {
           padding: 1.5rem;
         }
-
         @media (max-width: 480px) {
           padding: 1.25rem;
         }

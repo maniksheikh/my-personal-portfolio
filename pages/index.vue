@@ -1231,7 +1231,6 @@ onMounted(() => {
         font-size: 2.5rem;
         margin-bottom: 2rem;
       }
-
       @media (max-width: 480px) {
         font-size: 2rem;
       }
@@ -1246,7 +1245,6 @@ onMounted(() => {
       margin-bottom: 3rem;
       max-width: 700px;
       margin: 0 auto;
-
       @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;

@@ -1052,7 +1052,6 @@ onMounted(() => {
       @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
       }
-
       @media (max-width: 640px) {
         grid-template-columns: 1fr;
       }
@@ -1072,7 +1071,6 @@ onMounted(() => {
         h3 {
           font-size: 1.5rem;
           font-weight: 600;
-
           color: $primary-color;
           text-align: center;
 

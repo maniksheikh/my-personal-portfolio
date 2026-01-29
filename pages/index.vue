@@ -1206,12 +1206,10 @@ onMounted(() => {
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
-
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 5px 15px rgba(58, 62, 255, 0.3);
         }
-
         &:active {
           transform: translateY(0);
         }

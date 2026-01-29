@@ -496,7 +496,6 @@ onMounted(() => {
           grid-template-columns: repeat(2, 1fr);
           padding: 0 1rem;
         }
-
         @media (max-width: 640px) {
           grid-template-columns: 1fr;
           padding: 0 1rem;
@@ -526,7 +525,6 @@ onMounted(() => {
           .icon-wrapper {
             transition: all 0.3s ease-in-out;
           }
-
           &:hover {
             .icon-wrapper {
               transform: translateY(-5px) scale(1.1);

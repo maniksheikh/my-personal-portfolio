@@ -443,7 +443,6 @@ onMounted(() => {
         color: #f8f4f4;
         line-height: 1.6;
         max-width: 600px;
-
         @media (max-width: 768px) {
           font-size: 1rem;
           padding: 0 1rem;
@@ -516,7 +515,6 @@ onMounted(() => {
           padding: 2rem;
           cursor: pointer;
           transition: all 0.3s ease-in-out;
-
           @media (max-width: 768px) {
             min-height: 200px;
             padding: 1.5rem;

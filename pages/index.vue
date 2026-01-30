@@ -1015,7 +1015,6 @@ onMounted(() => {
   .tech-stack-container {
     padding: 4rem 2rem;
     font-family: Inter, "Segoe UI", sans-serif;
-
     @media (max-width: 768px) {
       padding: 2rem 1rem;
     }
@@ -1057,7 +1056,6 @@ onMounted(() => {
         padding: 2rem;
         border: 1px solid $border-color;
         transition: $transition;
-
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);

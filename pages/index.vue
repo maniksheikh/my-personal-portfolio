@@ -750,7 +750,6 @@ onMounted(() => {
           justify-content: space-between;
           width: 100%;
           gap: 0.5rem;
-
           @media (max-width: 768px) {
             font-size: 1.1rem;
           }
@@ -920,7 +919,6 @@ onMounted(() => {
 
         &:hover {
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
           &:nth-child(1) {
             border: 2px solid #3a3eff;
             box-shadow: 0 10px 20px rgba(58, 62, 255, 0.1);

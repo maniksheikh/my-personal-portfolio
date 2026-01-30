@@ -1114,14 +1114,12 @@ onMounted(() => {
             border-color: rgba($primary-color, 0.8);
           }
         }
-
         &:nth-child(2) {
           border-color: rgba($secondary-color, 0.3);
           &:hover {
             border-color: rgba($secondary-color, 0.8);
           }
         }
-
         &:nth-child(3) {
           border-color: rgba($accent-color, 0.3);
           &:hover {
@@ -1138,7 +1136,6 @@ onMounted(() => {
     border-radius: 1rem;
     position: relative;
     z-index: 1;
-
     @media (max-width: 768px) {
       padding: 2rem 1rem;
     }

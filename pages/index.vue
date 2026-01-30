@@ -1151,7 +1151,6 @@ onMounted(() => {
       border-radius: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
       z-index: 1;
-
       @media (max-width: 768px) {
         padding: 1.5rem;
         margin-bottom: 2rem;
@@ -1242,7 +1241,6 @@ onMounted(() => {
         gap: 2rem;
         margin-bottom: 2rem;
       }
-
       @media (max-width: 480px) {
         gap: 1.5rem;
         flex-direction: column;

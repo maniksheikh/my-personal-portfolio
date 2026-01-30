@@ -628,7 +628,6 @@ onMounted(() => {
     margin-top: 8rem;
     padding: 2rem 0;
     min-height: 60vh;
-
     @media (max-width: 768px) {
       margin-top: 3rem;
       min-height: 100%;
@@ -726,7 +725,6 @@ onMounted(() => {
       &:hover::before {
         left: 100%;
       }
-
       &:hover {
         box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
         background: linear-gradient(145deg, #12121a, #1a1a24);

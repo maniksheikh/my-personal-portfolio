@@ -399,7 +399,6 @@ onMounted(() => {
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-
         @media (max-width: 768px) {
           font-size: 2.5rem;
         }
@@ -430,7 +429,6 @@ onMounted(() => {
           -webkit-text-fill-color: transparent;
           transition: all 0.3s ease-in-out;
           display: inline-block;
-
           @media (max-width: 768px) {
             font-size: 1.2rem;
           }

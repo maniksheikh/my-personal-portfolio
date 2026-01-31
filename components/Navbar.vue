@@ -60,7 +60,6 @@ const closeMenu = () => {
         -webkit-text-fill-color: transparent;
         text-decoration: none;
         transition: all 0.3s ease;
-
         &:hover {
           background: linear-gradient(135deg, #ff6b6b 0%, #e450b7 50%, #6f42c1 100%);
           -webkit-background-clip: text;
@@ -81,7 +80,6 @@ const closeMenu = () => {
           text-decoration: none;
           font-weight: 500;
           transition: color 0.3s ease;
-
           &:hover {
             color: #e450b7;
           }

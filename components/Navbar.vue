@@ -103,11 +103,9 @@ const closeMenu = () => {
           &:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
           }
-
           &:nth-child(2) {
             opacity: 0;
           }
-
           &:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
           }
@@ -137,7 +135,6 @@ const closeMenu = () => {
         transform: translateY(-150%);
         transition: transform 0.3s ease;
         backdrop-filter: blur(10px);
-
         &.active {
           transform: translateY(0);
         }

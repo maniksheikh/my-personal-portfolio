@@ -73,7 +73,6 @@ const closeMenu = () => {
       display: flex;
       gap: 2rem;
       list-style: none;
-
       li {
         a {
           color: #c5c5c5;
@@ -98,7 +97,6 @@ const closeMenu = () => {
         height: 2px;
         background-color: #c5c5c5;
         transition: all 0.3s ease;
-
         &.active {
           &:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);

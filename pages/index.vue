@@ -383,7 +383,6 @@ onMounted(() => {
     .hero-content {
       width: 100%;
       max-width: 700px;
-
       @media (max-width: 968px) {
         display: flex;
         flex-direction: column;

@@ -244,8 +244,7 @@ const handleSubmit = async (e) => {
   
   try {
     const form = e.target;
-    const formDataToSend = new FormData(form);
-    
+    const formDataToSend = new FormData(form);  
     const response = await fetch(form.action, {
       method: 'POST',
       body: formDataToSend,
@@ -263,8 +262,7 @@ const handleSubmit = async (e) => {
       };
       
       form.reset();
-      await nextTick();
-      
+      await nextTick(); 
       alert('Thank you for your message! I will get back to you soon.');
     } else {
       throw new Error('Failed to send message');

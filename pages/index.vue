@@ -337,7 +337,6 @@ onMounted(() => {
     padding: 2rem;
     margin: 0 auto;
     max-width: 1400px;
-
     @media (max-width: 968px) {
       flex-direction: column;
       gap: 3rem;
@@ -359,7 +358,6 @@ onMounted(() => {
       animation: border-glow 3s infinite;
       transition: transform 0.3s ease-in-out;
       cursor: pointer;
-
       @media (max-width: 768px) {
         width: 150px;
         height: 150px;

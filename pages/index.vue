@@ -1029,7 +1029,6 @@ onMounted(() => {
       gap: 3rem;
       max-width: 1200px;
       margin: 0 auto;
-
       @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1053,7 +1052,6 @@ onMounted(() => {
           font-weight: 600;
           color: $primary-color;
           text-align: center;
-
           .stack-title {
             font-size: 1.5rem;
             color: rgb(204, 214, 246);

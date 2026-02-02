@@ -931,7 +931,6 @@ onMounted(() => {
           display: flex;
           justify-content: center;
           align-items: center;
-
           svg {
             width: 2rem;
             height: 2rem;
@@ -970,8 +969,7 @@ onMounted(() => {
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
-
-          @media (max-width: 768px) {
+         @media (max-width: 768px) {
             font-size: 2rem;
           }
           @media (max-width: 480px) {

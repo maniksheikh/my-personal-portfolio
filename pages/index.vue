@@ -688,7 +688,6 @@ onMounted(() => {
       overflow: hidden;
       cursor: pointer;
       flex-shrink: 0;
-
       @media (max-width: 768px) {
         padding: 1.5rem;
         min-width: 300px;
@@ -860,7 +859,6 @@ onMounted(() => {
       position: relative;
       display: inline-block;
       width: 100%;
-
       @media (max-width: 768px) {
         font-size: 2.5rem;
         margin-bottom: 2rem;

@@ -1195,7 +1195,6 @@ onMounted(() => {
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-
       @media (max-width: 768px) {
         font-size: 2.5rem;
         margin-bottom: 2rem;
@@ -1218,7 +1217,6 @@ onMounted(() => {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
-
       @media (max-width: 768px) {
         gap: 2rem;
         margin-bottom: 2rem;

@@ -877,7 +877,6 @@ onMounted(() => {
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
-
       @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -898,7 +897,6 @@ onMounted(() => {
         position: relative;
         overflow: hidden;
         cursor: pointer;
-
         @media (max-width: 768px) {
           padding: 1.5rem;
         }

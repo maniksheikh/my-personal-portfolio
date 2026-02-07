@@ -1290,7 +1290,6 @@ onMounted(() => {
     box-shadow: 0 0 20px rgba(228, 80, 183, 0.2);
   }
 }
-
 @keyframes fade-in {
   to {
     opacity: 1;
@@ -1307,7 +1306,6 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
-
 @keyframes pulse {
   0%,
   100% {
@@ -1327,7 +1325,6 @@ onMounted(() => {
     transform: translateY(8px);
   }
 }
-
 @keyframes shine {
   to {
     left: 100%;

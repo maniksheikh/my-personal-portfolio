@@ -957,7 +957,7 @@ onMounted(() => {
           }
         }
 
-        .value {
+      .value {
           font-size: 2.5rem;
           font-weight: 700;
           margin-bottom: 0.5rem;
@@ -972,7 +972,6 @@ onMounted(() => {
             font-size: 1.75rem;
           }
         }
-
         .label {
           font-size: 1rem;
           color: #f8f4f4;
@@ -1067,7 +1066,6 @@ onMounted(() => {
           flex-direction: column;
           gap: 1rem;
           margin-top: 1.5rem;
-
           .tech-item {
             background: rgba(255, 255, 255, 0.08);
             padding: 0.8rem;

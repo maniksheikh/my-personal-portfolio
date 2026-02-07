@@ -1132,7 +1132,6 @@ onMounted(() => {
 
       .form-group {
         margin-bottom: 1.5rem;
-
         input,
         textarea {
           width: 100%;
@@ -1152,7 +1151,6 @@ onMounted(() => {
             color: rgba(255, 255, 255, 0.5);
           }
         }
-
         textarea {
           min-height: 150px;
           resize: vertical;
@@ -1233,7 +1231,6 @@ onMounted(() => {
           color: #e450b7;
           transform: translateY(-2px);
         }
-
         svg {
           width: 24px;
           height: 24px;
